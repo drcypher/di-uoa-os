@@ -4,10 +4,12 @@
 
 This program maintains a fixed-size swappable double buffer of integers used
 concurrently by two thread groups:
+
 1. A group of producer threads writing into the produce buffer
 2. A group of consumer threads reading from the consume buffer
 
 There are three rules, however:
+
 1. Consumers read only from a single side of the buffer (`bufferProduceData()`)
 2. Producers write only to a single side of the buffer (`bufferConsumeData()`)
 3. When the producer's side has no space left (`bufferConsumeIsExhausted()`) and the consumer's side of
@@ -20,6 +22,7 @@ data interchange with the data structure but cannot be used concurrently without
 
 So there's a need for two wrapper functions which will handle synchronization and protection
 consistently:
+
 1. `protocolProduceData`
 2. `protocolConsumeData`
 

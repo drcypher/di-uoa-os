@@ -1,4 +1,4 @@
-# Consumers & Producers with Swappable Double Buffer
+# Writer and Readers with single-value exchange buffer
 
 ## Workflow
 
